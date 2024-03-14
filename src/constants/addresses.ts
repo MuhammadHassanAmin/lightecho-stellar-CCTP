@@ -15,6 +15,9 @@ export const CHAIN_IDS_TO_USDC_ADDRESSES = {
 
   [SupportedChainId.SOLANA_MAINNET]:
     '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
+
+  [SupportedChainId.POLYGON_MUMBAI]:
+    '0x9999f7Fea5938fD3b1E26A12c3f2fb024e194f97',
 }
 
 /**
@@ -32,6 +35,9 @@ export const CHAIN_IDS_TO_TOKEN_MESSENGER_ADDRESSES = {
 
   [SupportedChainId.SOLANA_MAINNET]:
     '0x9f3b8679c73c2fef8b59b4f3444d4e156fb70aa5',
+
+  [SupportedChainId.POLYGON_MUMBAI]:
+    '0x9f3b8679c73c2fef8b59b4f3444d4e156fb70aa5',
 }
 
 /**
@@ -48,5 +54,8 @@ export const CHAIN_IDS_TO_MESSAGE_TRANSMITTER_ADDRESSES = {
     '0x9f3b8679c73c2fef8b59b4f3444d4e156fb70aa5',
 
   [SupportedChainId.SOLANA_MAINNET]:
+    '0x9f3b8679c73c2fef8b59b4f3444d4e156fb70aa5',
+
+  [SupportedChainId.POLYGON_MUMBAI]:
     '0x9f3b8679c73c2fef8b59b4f3444d4e156fb70aa5',
 }

@@ -55,6 +55,11 @@ const CHAIN_SELECT_ITEMS: SelectItem[] = [
     label: CHAIN_TO_CHAIN_NAME[Chain.SOLANA],
     icon: CHAIN_ICONS[Chain.SOLANA],
   },
+  {
+    value: Chain.POLYGON_MUMBAI,
+    label: CHAIN_TO_CHAIN_NAME[Chain.POLYGON_MUMBAI],
+    icon: CHAIN_ICONS[Chain.POLYGON_MUMBAI],
+  },
 ]
 
 export const DEFAULT_FORM_INPUTS: TransactionInputs = {
@@ -281,7 +286,7 @@ const SendForm = ({ handleNext, handleUpdateForm, formInputs }: Props) => {
         className="mt-12"
         type="submit"
         size="large"
-        disabled={!isFormValid}
+        // disabled={!isFormValid}
       >
         NEXT
       </Button>

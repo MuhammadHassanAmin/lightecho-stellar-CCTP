@@ -7,6 +7,7 @@ export enum Chain {
   ARB = 'ARB',
   POLYGON = 'POLYGON',
   SOLANA = 'SOLANA',
+  POLYGON_MUMBAI = 'POLYGON_MUMBAI',
 }
 
 /**
@@ -18,6 +19,7 @@ export enum SupportedChainId {
   ARB_SEPOLIA = 421614,
   POLYGON_MAINNET = 137,
   SOLANA_MAINNET = 101,
+  POLYGON_MUMBAI = 80001,
 }
 
 /**
@@ -30,6 +32,7 @@ export const SupportedChainIdHex = {
   ARB_SEPOLIA: '0x66eee',
   POLYGON_MAINNET: '0x89',
   SOLANA_MAINNET: '0x65',
+  POLYGON_MUMBAI: '0x13881',
 }
 
 interface ChainToChainIdMap {
@@ -46,6 +49,7 @@ export const CHAIN_TO_CHAIN_ID: ChainToChainIdMap = {
   [Chain.ARB]: SupportedChainId.ARB_SEPOLIA,
   [Chain.POLYGON]: SupportedChainId.POLYGON_MAINNET,
   [Chain.SOLANA]: SupportedChainId.SOLANA_MAINNET,
+  [Chain.POLYGON_MUMBAI]: SupportedChainId.POLYGON_MUMBAI,
 }
 
 interface ChainToChainNameMap {
@@ -61,6 +65,7 @@ export const CHAIN_TO_CHAIN_NAME: ChainToChainNameMap = {
   ARB: 'Arbitrum',
   POLYGON: 'Polygon',
   SOLANA: 'Solana',
+  POLYGON_MUMBAI: 'Polygon Mumbai',
 }
 
 /**
@@ -79,6 +84,7 @@ export enum DestinationDomain {
   ARB = 3,
   POLYGON = 4,
   SOLANA = 5,
+  POLYGON_MUMBAI = 6,
 }
 
 // https://eips.ethereum.org/EIPS/eip-3085
@@ -147,6 +153,18 @@ const POLYGON_MAINNET: AddEthereumChainParameter = {
   rpcUrls: ['https://rpc-mainnet.maticvigil.com/'],
 }
 
+const MUMBAI_TESTNET: AddEthereumChainParameter = {
+  chainId: SupportedChainIdHex.POLYGON_MUMBAI, // Chain ID for Mumbai Testnet
+  chainName: 'Mumbai Testnet',
+  blockExplorerUrls: ['https://mumbai.polygonscan.com/'], // Block explorer URL
+  rpcUrls: ['https://rpc-mumbai.matic.today'], // RPC endpoint
+  nativeCurrency: {
+    name: 'Matic',
+    symbol: 'MATIC',
+    decimals: 18,
+  },
+}
+
 const SOLANA_MAINNET: AddEthereumChainParameter = {
   chainId: SupportedChainIdHex.SOLANA_MAINNET,
   blockExplorerUrls: ['https://explorer.solana.com/'],
@@ -165,4 +183,5 @@ export const CHAIN_ID_HEXES_TO_PARAMETERS: ChainIdToChainParameters = {
   [SupportedChainIdHex.ARB_SEPOLIA]: ARB_SEPOLIA,
   [SupportedChainIdHex.POLYGON_MAINNET]: POLYGON_MAINNET,
   [SupportedChainIdHex.SOLANA_MAINNET]: SOLANA_MAINNET,
+  [SupportedChainIdHex.POLYGON_MUMBAI]: MUMBAI_TESTNET,
 }
